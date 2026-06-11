@@ -6,7 +6,7 @@ namespace TaskManagerApi
 	{
 		public int Id { get; set; }
 
-		[Required(ErrorMessage = "The Title is too Long ,Please make it Shorter !!!")]
+		[Required(ErrorMessage = "Please Insert correct title and make it short !!!")]
 		public string Title { get; set; }
 
 		public string? Description { get; set; }
