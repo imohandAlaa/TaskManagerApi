@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <a routerLink="/" class="nav-logo">
+      <span class="logo-dot"></span>
+      Task Manager
+    </a>
+
+    <!-- Action Button -->
+    <div class="nav-actions">
+      <button class="btn-primary" (click)="openFormModal()">New Task</button>
+    </div>
+
+    <!-- Mobile Hamburger Menu Button -->
+    <button
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [class.open]="isMenuOpen"
+      aria-label="Toggle navigation"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</nav>

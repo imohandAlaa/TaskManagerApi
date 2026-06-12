@@ -1,0 +1,66 @@
+<div class="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl border border-gray-100">
+  <h2 class="text-3xl font-bold text-gray-900 mb-2">Create New Task</h2>
+  <p class="text-gray-500 mb-8">Whats in your mind today ?</p>
+
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="space-y-6">
+    <!-- Full Title Field -->
+    <div class="relative">
+      <input
+        type="text"
+        id="Title"
+        formControlName="Title"
+        class="peer w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white focus:border-transparent transition-all placeholder-transparent"
+        placeholder="Go to Gym"
+      />
+      <label
+        for="Title"
+        class="absolute left-4 top-3 text-gray-400 text-sm transition-all transform -translate-y-6 scale-75 origin-left peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-indigo-600"
+      >
+        Task Title
+      </label>
+      <!-- Error State -->
+      <div
+        *ngIf="taskForm.get('Title')?.invalid && taskForm.get('Title')?.touched"
+        class="mt-1 text-sm text-red-500"
+      >
+        Please enter a valid Title (max 100 characters).
+      </div>
+    </div>
+    <!-- Full Description Field -->
+    <div class="relative">
+      <textarea
+        type="text"
+        id="Description"
+        formControlName="Description"
+        class="peer w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white focus:border-transparent transition-all placeholder-transparent"
+        placeholder="Go to Gym"
+      ></textarea>
+      <label
+        for="Description"
+        class="absolute left-4 top-3 text-gray-400 text-sm transition-all transform -translate-y-6 scale-75 origin-left peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-indigo-600"
+      >
+        Description
+      </label>
+    </div>
+
+    <div class="relative">
+      <label class="flex items-center gap-2 font-medium text-slate-700">
+        <span>Done ?</span>
+        <input
+          type="checkbox"
+          id="IsCompleted"
+          formControlName="IsCompleted"
+          class="h-5 w-5 accent-indigo-600 cursor-pointer"
+          placeholder="Done ?"
+        />
+      </label>
+    </div>
+      <!-- Submit Button -->
+    <button
+      type="submit"
+      class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white font-medium rounded-lg shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+    >
+      Create Task
+    </button>
+  </form>
+</div>
