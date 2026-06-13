@@ -19,9 +19,6 @@ export class NavbarComponent {
   openFormModal() {
     const dialogRef = this.dialog.open(FormModalComponent, {
       width: '400px',
-      data: {
-        /* Optional data to pass in */
-      },
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log('Form result:', result);

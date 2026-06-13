@@ -9,8 +9,19 @@
   <mat-card-footer class="example-card-footer">
     <mat-chip-set aria-label="Tasks">
       <mat-chip>{{ CreatedAt() }}</mat-chip>
-      <button matButton>Edit</button>
-      <button matButton>Delete</button>
+      <button matButton (click)="deleteTaskButton()">Delete</button>
+      <label class="flex items-center gap-2 font-medium text-slate-700">
+        <span>Done ?</span>
+        <input
+          type="checkbox"
+          id="IsCompleted"
+          formControlName="IsCompleted"
+          class="h-5 w-5 accent-indigo-600 cursor-pointer"
+          placeholder="Done ?"
+          [checked]="IsCompleted()"
+          (change)="updateTaskCheckBox()"
+        />
+      </label>
     </mat-chip-set>
   </mat-card-footer>
 </mat-card>
