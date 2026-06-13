@@ -54,6 +54,7 @@ namespace TaskManagerApi.Controllers
 			}
 
 		}
+		// fetch all tasks 
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<TaskItem>>> GetAllTasks()
 		{
